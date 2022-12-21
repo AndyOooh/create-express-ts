@@ -4,7 +4,6 @@ import cors from 'cors';
 import { NODE_ENV, PORT } from './configs/VARS';
 import apiRoutes from './routes/index.routes.js';
 
-
 const app = express();
 
 app.use(cors());
