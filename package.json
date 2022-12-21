@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@andy_oooh/create-express-ts",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "private": false,
