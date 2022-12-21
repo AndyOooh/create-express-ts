@@ -1,3 +1,4 @@
+
 #!/usr/bin/env node
 
 import { execSync } from 'child_process';
@@ -30,7 +31,6 @@ const installedDependencies = runCommand(installDepsCommand);
 if (!installedDependencies) {
   process.exit(1);
 }
-
 console.log('Removing .git');
 runCommand(deleteUnusedCommand);
 
