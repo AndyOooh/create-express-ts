@@ -15,7 +15,7 @@ const runCommand = command => {
 const projectName = process.argv[2];
 const repoName = 'create-express-ts';
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/AndyOooh/${repoName} ${projectName}`;
-const deleteGitCommand = `sudo rm -rf .git`;
+const deleteGitCommand = `rm -rf .git`;
 const installDepsCommand = `cd ${projectName} && yarn install`;
 
 
