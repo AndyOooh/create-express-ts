@@ -14,10 +14,10 @@ const runCommand = command => {
 
 const projectName = process.argv[2];
 const repoName = 'create-express-ts';
-const gitCheckoutCommand = `git clone --depth 1 https://github.com/AndyOooh/${repoName} ${projectName}`;
-const deleteGitCommand = `rm -rf .git`;
-const installDepsCommand = `cd ${projectName} && yarn install`;
 
+const gitCheckoutCommand = `git clone --depth 1 https://github.com/AndyOooh/${repoName} ${projectName}`;
+const installDepsCommand = `cd ${projectName} && yarn install`;
+const deleteGitCommand = `cd ${projectName} && rm -rf ./.git`;
 
 console.log(`Cloning the ${repoName} repository to folder: ${projectName}`);
 const checkedOut = runCommand(gitCheckoutCommand);
@@ -30,8 +30,9 @@ const installedDependencies = runCommand(installDepsCommand);
 if (!installedDependencies) {
   process.exit(1);
 }
+
 console.log('Removing .git');
 runCommand(deleteGitCommand);
 
 console.log('Done!');
-console.log(`cd into ${projectName} and run "yarn start" to start the server.`);
+console.log(`cd into ${projectName} and run 'yarn start' to start the server.`);
