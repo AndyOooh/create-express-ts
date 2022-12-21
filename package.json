@@ -1,8 +1,10 @@
 {
+  "type": "module",
   "name": "@andy_oooh/create-express-ts",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "private": false,
   "bin": "./bin/cli.js",
   "dependencies": {
     "dotenv": "^16.0.3",
