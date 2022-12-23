@@ -7,7 +7,8 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },
-  "include": ["src/**/*", "tests/**/*"],
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "tests"],
   "ts-node": {
     // Tell ts-node CLI to install the --loader automatically
     "esm": true
