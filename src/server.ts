@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 
-import { NODE_ENV, PORT } from './configs/VARS';
+import { NODE_ENV, PORT } from './configs/VARS.js';
 import apiRoutes from './routes/index.routes.js';
 
 const app = express();
@@ -13,5 +13,5 @@ app.use(express.json());
 app.use('/', apiRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}, environmant: (${NODE_ENV})`);
+  console.log(`Server is running on port ${PORT}, environment: ${NODE_ENV}`);
 });

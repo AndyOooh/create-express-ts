@@ -5,7 +5,7 @@ import {
   updateUser,
   deleteUser,
   getUsers,
-} from '../../controllers/user.controller';
+} from '../../controllers/user.controller.js';
 
 // import usersValidator from './users.validator';
 
