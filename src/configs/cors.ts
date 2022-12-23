@@ -1,5 +1,5 @@
 console.log('inside app-config');
-import { FRONTEND_URL } from './VARS.js';
+import { FRONTEND_URL } from './index';
 
 export const corsConfig = {
   origin: [FRONTEND_URL, 'http://localhost:3000'],
