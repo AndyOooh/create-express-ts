@@ -17,7 +17,7 @@ const repoName = 'create-express-ts';
 
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/AndyOooh/${repoName} ${projectName}`;
 const installDepsCommand = `cd ${projectName} && yarn install`;
-const deleteUnusedCommand = `cd ${projectName} && rm -r bin .git`;
+const deleteUnusedCommand = `cd ${projectName} && rm -rf bin .git`;
 
 console.log(`Cloning the ${repoName} repository to folder: ${projectName}`);
 const checkedOut = runCommand(gitCheckoutCommand);
