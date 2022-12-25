@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@andy_oooh/create-express-ts",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "license": "MIT",
   "private": false,
   "bin": "./bin/cli.js",
