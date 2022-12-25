@@ -17,7 +17,7 @@ const repoName = 'create-express-ts';
 
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/AndyOooh/${repoName} ${projectName}`;
 const installDepsCommand = `cd ${projectName} && yarn install`;
-const deleteUnusedCommand = `cd ${projectName} && rm -rf ./.git /bin`;
+// const deleteUnusedCommand = `cd ${projectName} && rm -rf ./.git && rm -rf /bin`;
 
 console.log(`Cloning the ${repoName} repository to folder: ${projectName}`);
 const checkedOut = runCommand(gitCheckoutCommand);
@@ -31,8 +31,8 @@ if (!installedDependencies) {
   process.exit(1);
 }
 
-console.log('Removing .git');
-runCommand(deleteUnusedCommand);
+// console.log('Removing .git');
+// runCommand(deleteUnusedCommand);
 
 console.log('Done!');
 console.log(`cd into ${projectName} and run "yarn start" to start the server.`);

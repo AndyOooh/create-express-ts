@@ -1,4 +1,3 @@
-console.log('inside app-config');
 import { FRONTEND_URL } from './index';
 
 export const corsConfig = {
