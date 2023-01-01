@@ -17,7 +17,8 @@ const repoName = 'create-express-ts';
 
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/AndyOooh/${repoName} ${projectName}`;
 const installDepsCommand = `cd ${projectName} && yarn install`;
-const deleteUnusedCommand = `cd ${projectName} && rm -rf bin .git`;
+const deleteUnusedCommand = `cd ${projectName} && rm -rf bin .git notes.md`;
+const updatePackageJson = `npm pkg set name=${projectName}`;
 
 console.log(`Cloning the ${repoName} repository to folder: ${projectName}`);
 const checkedOut = runCommand(gitCheckoutCommand);
@@ -36,3 +37,4 @@ runCommand(deleteUnusedCommand);
 
 console.log('Done!');
 console.log(`cd into ${projectName} and run "yarn start" to start the server.`);
+console.log(`Remember to update package.json with name, version, privacy, bin and files.`);
