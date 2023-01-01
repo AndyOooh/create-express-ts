@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 import { execSync } from 'child_process';
+import chalk from 'chalk';
+
+const { log } = console;
 
 const runCommand = command => {
   try {
@@ -18,23 +21,35 @@ const repoName = 'create-express-ts';
 const gitCheckoutCommand = `git clone --depth 1 https://github.com/AndyOooh/${repoName} ${projectName}`;
 const installDepsCommand = `cd ${projectName} && yarn install`;
 const deleteUnusedCommand = `cd ${projectName} && rm -rf bin .git notes.md`;
-const updatePackageJson = `npm pkg set name=${projectName}`;
+const updatePackageJsonCommand = `cd ${projectName} && npm pkg set name=${projectName} version=1.0.0 && npm pkg delete private bin files`;
+// const deleteUnusedDeps = `cd ${projectName} && pwd && yarn remove chalk`; //  it seems chalk is auto-removed
 
-console.log(`Cloning the ${repoName} repository to folder: ${projectName}`);
+log(chalk.cyanBright(`Cloning ${repoName} repository to folder: ${projectName}...`));
 const checkedOut = runCommand(gitCheckoutCommand);
 if (!checkedOut) {
   process.exit(1);
 }
 
-console.log('Installing dependencies...');
+log(chalk.cyanBright('Installing dependencies...'));
 const installedDependencies = runCommand(installDepsCommand);
 if (!installedDependencies) {
   process.exit(1);
 }
 
-console.log('Removing .git');
+log(chalk.cyanBright('Removing bin, .git and notes.md...'));
 runCommand(deleteUnusedCommand);
+if (!deleteUnusedCommand) {
+  process.exit(1);
+}
 
-console.log('Done!');
-console.log(`cd into ${projectName} and run "yarn start" to start the server.`);
-console.log(`Remember to update package.json with name, version, privacy, bin and files.`);
+log(chalk.cyanBright('Resetting package.json...'));
+runCommand(updatePackageJsonCommand);
+if (!updatePackageJsonCommand) {
+  process.exit(1);
+}
+
+log(chalk.hex('#DEADED').bold('Done!'));
+
+log(
+  chalk.cyanBright(`cd into /${projectName} and run "yarn start" to start the server.`)
+);
